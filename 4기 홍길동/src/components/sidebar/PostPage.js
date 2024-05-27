@@ -1,12 +1,12 @@
 export default function PostPage({ $target, initalState }) {
-  console.log(initalState);
-  const $page = document.createElement("div");
+    const $page = document.createElement('div')
+    $page.className = 'postList'
+    $target.appendChild($page)
 
-  this.state = initalState;
-  $page.innerHTML = `
+    this.state = initalState
+    $page.innerHTML = `
   <ul>
-    ${this.state.map((row) => `<li>${row.id} / ${row.title}</li>`).join("")}
+    ${this.state.map((row) => `<li>${row.id} / ${row.title}</li>`).join('')}
   </ul>
-  `;
-  $target.appendChild($page);
+  `
 }

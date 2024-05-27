@@ -1,7 +1,7 @@
 export default function EditorPage({ $target }) {
-  const $page = document.createElement("div");
+    const $page = document.createElement('div')
 
-  $page.innerHTML = "editor";
+    $page.innerHTML = 'editor'
 
-  $target.appendChild($page);
+    $target.appendChild($page)
 }

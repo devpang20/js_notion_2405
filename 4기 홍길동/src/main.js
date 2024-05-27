@@ -1,7 +1,7 @@
-import App from "./components/App.js";
+import App from './components/App.js'
 
-const $app = document.querySelector("#app");
+const $app = document.querySelector('#app')
 
 new App({
-  $target: $app,
-});
+    $target: $app,
+})
