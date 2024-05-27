@@ -1,3 +1,5 @@
+import { request } from '../../\butils/api.js'
+
 export default function PostList({ $target, initalState }) {
     const $postList = document.createElement('div')
     $postList.className = 'postList'
@@ -25,17 +27,27 @@ export default function PostList({ $target, initalState }) {
     }
 
     this.state = initalState
-    $postList.innerHTML = `<ul>
-      ${this.state
-          .map(
-              (document) => `<li class="dataList">📄 ${document.title}
-                <butto class="addBtn">➕</button>
-                <button class="delBtn">🗑️</button>
-              </li>
-          ${document.documents.length > 0 ? `<ul>${this.createTreeView(document.documents)}</ul>` : ''}
-          `,
-          )
-          .join('')}
-    </ul>
-  `
+
+    this.setState = async () => {
+        this.state = await request('/documents')
+        this.render()
+    }
+
+    this.render = () => {
+        $postList.innerHTML = `<ul>
+        ${this.state
+            .map(
+                (document) => `<li class="dataList">📄 ${document.title}
+                  <butto class="addBtn">➕</button>
+                  <button class="delBtn">🗑️</button>
+                </li>
+            ${document.documents.length > 0 ? `<ul>${this.createTreeView(document.documents)}</ul>` : ''}
+            `,
+            )
+            .join('')}
+      </ul>
+    `
+    }
+
+    this.render()
 }

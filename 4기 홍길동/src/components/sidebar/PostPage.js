@@ -6,7 +6,8 @@ export default function PostPage({ $target, initalState }) {
     $page.className = ''
     $target.appendChild($page)
 
-    new PostList({ $target: $page, initalState })
+    const $postList = new PostList({ $target: $page, initalState })
+    $postList.setState()
 
     new NewButton({ $target: $page })
 }
