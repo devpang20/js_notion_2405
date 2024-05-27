@@ -37,5 +37,11 @@ export default function App({ $target }) {
         $target: $listContainer,
         initalState: testState,
     })
-    const editorPage = new EditorPage({ $target: $rendingContainer })
+
+    const testRowState = {
+        title: '안녕하세요',
+        content: '아무거나 쓰기, 이건 내용입니다',
+    }
+
+    const editorPage = new EditorPage({ $target: $rendingContainer, initialState: testRowState })
 }
