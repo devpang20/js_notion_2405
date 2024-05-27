@@ -1,3 +1,4 @@
+import NewButton from '../button/NewButton.js'
 import PostList from './PostList.js'
 
 export default function PostPage({ $target, initalState }) {
@@ -6,4 +7,6 @@ export default function PostPage({ $target, initalState }) {
     $target.appendChild($page)
 
     new PostList({ $target: $page, initalState })
+
+    new NewButton({ $target: $page })
 }

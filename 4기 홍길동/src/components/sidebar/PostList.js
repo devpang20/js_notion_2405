@@ -4,7 +4,6 @@ export default function PostList({ $target, initalState }) {
     $target.appendChild($postList)
 
     this.createTreeView = (data) => {
-        console.log('createTreeView', data)
         let str = ''
 
         for (const key in data) {
